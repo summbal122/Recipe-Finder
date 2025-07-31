@@ -1,0 +1,39 @@
+{
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.0",
+    "jest": "^30.0.5",
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "@tailwindcss/cli": "^4.1.11",
+    "firebase": "^12.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
+    "react-scroll": "^1.9.3",
+    "tailwindcss": "^4.1.11"
+  },
+  "name": "walmart",
+  "version": "1.0.0",
+  "description": "project",
+  "scripts": {
+    "test": "jest",
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/summbal122/Walmart.git"
+  },
+  "keywords": [
+    "walmart"
+  ],
+  "author": "sumbal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/summbal122/Walmart/issues"
+  },
+  "homepage": "https://github.com/summbal122/Walmart#readme"
+}
