@@ -3,14 +3,13 @@ import Main from "./components/Main"
 import RecipePage from "./components/RecipePage"
 import Body from "./components/Body"
 import Footer from "./components/Footer"
+import CuisinesPage from "./components/CuisinesPage"
 import { createBrowserRouter, RouterProvider } from "react-router"
 const AppLayout = () => {
   return (
     <div className="">
     <Header/>
     <Body/>
-    <Footer/>
-  
     </div>
   )
 }
@@ -23,8 +22,19 @@ const appRouter = createBrowserRouter([
         path: "/", 
         element: <Main />,
       }, {
-        path: "/recipes",
-        element: <RecipePage/>
+        path: "/recipes/:name",
+        element: <>
+        <RecipePage/>,
+         <Footer/>
+        </>
+      }, 
+      {
+        path: "/cuisine/:name",
+        element:<>
+          <CuisinesPage/>,
+        <Footer/>
+        </>
+
       }
     ],
   },

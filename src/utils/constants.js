@@ -1,0 +1,22 @@
+const cuisines = [
+  { id: 1, name: "Indian" },
+  { id: 2, name: "Italian" },
+  { id: 3, name: "Chinese" },
+  { id: 4, name: "Mexican" },
+  { id: 5, name: "Thai" },
+  { id: 6, name: "Japanese" },
+  { id: 7, name: "Turkish" },
+  { id: 8, name: "American" },
+  { id: 9, name: "French" },
+  { id: 10, name: "Greek" },
+  { id: 11, name: "Spanish" },
+  { id: 12, name: "Moroccan" },
+  { id: 13, name: "Vietnamese" },
+  { id: 14, name: "British" },
+  { id: 15, name: "Russian" },
+  { id: 16, name: "Malaysian" },
+  { id: 17, name: "Filipino" },
+  { id: 18, name: "Polish" },
+  { id: 19, name: "Ukrainian" },
+];
+export default cuisines
