@@ -12,7 +12,7 @@ const CuisinesPage = () => {
   return (
     <div className="grid grid-cols-4 gap-6 justify-center p-6 min-h-screen mt-20">
       {cuisines.map((c) => (
-        <Link key={c.idMeal}  to={`/recipes/${c.strMeal}`}> <CuisineCard cuisine={c} /> </Link>
+        <Link key={c.idMeal}  to={`/recipe/${c.strMeal}`}> <CuisineCard cuisine={c} /> </Link>
       ))}
     </div>
   );

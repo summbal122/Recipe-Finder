@@ -18,7 +18,6 @@ const RecipePage = () => {
       ingredients.push(`${measure?.trim() || ""} ${ingredient.trim()}`);
     }
   }
-
   return (
     <div className="bg-white min-h-screen p-6 mt-20">
     <div className="flex items-center space-x-2 mb-8">

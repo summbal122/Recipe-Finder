@@ -1,4 +1,4 @@
-import cuisines from '../utils/constants'
+import {cuisines} from '../utils/constants'
 import { Link } from 'react-router'
 import { handleShowItems } from '../utils/handleStateSlice'
 import { useDispatch, useSelector } from 'react-redux'
@@ -33,11 +33,11 @@ const Header = () => {
               </div>
               
             {cuisines.map((c) => (
-
           <li onClick={()=> {
             handleCuisine(c.name);
             toggleCuisines();
-          }} className='hover:cursor-pointer hover:text-dark-primary' key={c.id}> <Link to={`/cuisine/${c.name}`}>
+          }} className='hover:cursor-pointer hover:text-dark-primary' key={c.id}> 
+          <Link to={`/cuisine/${c.name}`}>
          <div>{c.name}</div>
         </Link> </li>
         ))}
@@ -49,7 +49,7 @@ const Header = () => {
         <input value={query}
          onChange={(e) => setQuery(e.target.value)} 
          className='w-full border-white px-4 outline-none' placeholder='Search For a Recipe' />
-         <Link to={`/recipes/${query}`}>
+         <Link to={`/recipe/${query}`}>
         <button onClick={handleSearchQuery}
          className='p-3 hover:cursor-pointer h-full'>
           <i className="fa-solid fa-magnifying-glass"></i>

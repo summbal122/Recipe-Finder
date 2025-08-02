@@ -4,6 +4,7 @@ import RecipePage from "./components/RecipePage"
 import Body from "./components/Body"
 import Footer from "./components/Footer"
 import CuisinesPage from "./components/CuisinesPage"
+import Recipes from "./components/Recipes"
 import { createBrowserRouter, RouterProvider } from "react-router"
 const AppLayout = () => {
   return (
@@ -22,7 +23,7 @@ const appRouter = createBrowserRouter([
         path: "/", 
         element: <Main />,
       }, {
-        path: "/recipes/:name",
+        path: "/recipe/:name",
         element: <>
         <RecipePage/>,
          <Footer/>
@@ -31,10 +32,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/cuisine/:name",
         element:<>
-          <CuisinesPage/>,
+        <CuisinesPage/>,
         <Footer/>
         </>
-
+      },
+        {
+        path: "/recipes",
+        element:<>
+        <Recipes/>,
+        <Footer/>
+        </>
       }
     ],
   },
