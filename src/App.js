@@ -25,21 +25,21 @@ const appRouter = createBrowserRouter([
       }, {
         path: "/recipe/:name",
         element: <>
-        <RecipePage/>,
+        <RecipePage/>
          <Footer/>
         </>
       }, 
       {
         path: "/cuisine/:name",
         element:<>
-        <CuisinesPage/>,
+        <CuisinesPage/>
         <Footer/>
         </>
       },
         {
         path: "/recipes",
         element:<>
-        <Recipes/>,
+        <Recipes/>
         <Footer/>
         </>
       }

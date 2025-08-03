@@ -10,12 +10,16 @@ const CuisinesPage = () => {
     return <p className="text-center text-gray-500 mt-20">No cuisines found for {name}.</p>;
   }
   return (
-    <div className="grid grid-cols-4 gap-6 justify-center p-6 min-h-screen mt-20">
+    <div className="bg-gray-50">
+    <div className="p-6 min-h-screen">
+       <div className="mt-20 grid grid-cols-5">
       {cuisines.map((c) => (
-        <Link key={c.idMeal}  to={`/recipe/${c.strMeal}`}> <CuisineCard cuisine={c} /> </Link>
+        <Link key={c.idMeal} to={`/recipe/${c.strMeal}`}> <CuisineCard cuisine={c} /> </Link>
       ))}
+      </div>
     </div>
-  );
+    </div>
+  )
 };
 
 export default CuisinesPage;

@@ -27,15 +27,14 @@ const Recipes = () => {
 };
 
   return (
-   <div className = "mt-20 flex min-h-screen w-full px-4">
+   <div className="bg-gray-50 flex min-h-screen w-full px-4 pb-10">
     <div>
-    <div className="flex flex-wrap mx-auto gap-2 w-9/12 mt-6"> 
+    <div className="flex flex-wrap mt-24 mx-auto gap-2 w-9/12"> 
     {categories.map((c)=> (
   <button 
     key={c.idCategory}
     onClick={() => handleCategory(c.strCategory)}
-    className="bg-white font-semibold px-6 py-2 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white"
-  >
+    className="bg-white font-semibold px-6 py-2 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" >
     {c.strCategory}
   </button>
 ))}
@@ -59,12 +58,13 @@ const Recipes = () => {
     <div className='col-span-2 flex flex-wrap gap-1 h-100'> 
       {letters.map((l) => (
         <button onClick={() => handleLetter(l.letter)}
-         className="bg-white font-semibold py-2 w-14 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" key={l.id}>{l.letter}</button>
+         className="bg-white font-semibold py-2 w-14 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" 
+         key={l.id}>{l.letter}
+         </button>
       ) )}
 
     </div>
     </div>
-
    </div>
    </div>
   )

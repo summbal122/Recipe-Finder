@@ -20,15 +20,15 @@ const Header = () => {
     console.log(query);
   }
   return (
-    <div className='absolute top-0 w-full bg-primary grid grid-cols-12 gap-10 px-20 py-2 h-20'>
-      <div className='col-span-2 flex items-center justify-between'>
-        <div className='flex items-center gap-2'>
-        <i onClick={toggleCuisines} className="fa-solid fa-bars hover:cursor-pointer text-2xl"></i>
-        <h1  className=' font-semibold'>Cuisines</h1>
+    <div className='w-full flex justify-center '>
+        <div onClick={toggleCuisines}  className='flex items-center absolute top-2 left-6 gap-2 hover:cursor-pointer'>
+        <img src='https://cdn-icons-png.flaticon.com/256/561/561611.png' className="w-14"/>
+        <h1  className='text-sm font-light tracking-wider'>Cuisines</h1>
         </div>
           {showItems && ( 
-            <ul className='absolute z-20 left-0 top-0 bg-white py-6 px-10 space-y-2 h-screen overflow-y-scroll'>
-              <div className='text-end'>
+            <ul className='absolute z-20 left-0 top-0 bg-white py-6 px-10 space-y-2 h-screen overflow-y-scroll shadow-lg'>
+               <div className='flex justify-between items-center'>
+              <span className='text-dark-primary'>Cuisines</span>
                 <i onClick={toggleCuisines}  className="fa-solid fa-xmark text-xl -mr-4 hover:cursor-pointer"></i>
               </div>
               
@@ -42,25 +42,29 @@ const Header = () => {
         </Link> </li>
         ))}
         </ul> )}
-       
+
+    <div className='absolute top-2 w-9/12 grid grid-cols-12 gap-10 px-20 py-2 rounded-lg shadow-md bg-white'>
+      <div className='col-span-2 flex items-center justify-between'>
         <Link to="/"><img className='w-12 rounded-full' alt="logo" src="https://png.pngtree.com/template/20191015/ourmid/pngtree-chef-abstract-kitchener-cooky-icon-logo-image_317353.jpg"/></Link>
       </div>
-      <div className='flex col-span-7 bg-white rounded-2xl'>
+      <div className='flex col-span-7 bg-gray-100 rounded-2xl focus-within:outline  focus-within:outline-dark-primary'>
         <input value={query}
          onChange={(e) => setQuery(e.target.value)} 
-         className='w-full border-white px-4 outline-none' placeholder='Search For a Recipe' />
+         className='w-full  px-4 outline-none' placeholder='Search For a Recipe' />
          <Link to={`/recipe/${query}`}>
         <button onClick={handleSearchQuery}
-         className='p-3 hover:cursor-pointer h-full'>
+         className='p-2 hover:cursor-pointer h-full'>
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
         </Link>
       </div>
-      <ul className='text-secondary flex col-span-3 items-center gap-8 font-semibold'>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Reviews</li>
+      <ul className='flex col-span-3 items-center gap-8 font-thick text-sm '>
+        <li className='hover:cursor-pointer hover:text-dark-primary'>About</li>
+        <li className='hover:cursor-pointer hover:text-dark-primary'>Contact</li>
+        <li className='hover:cursor-pointer hover:text-dark-primary'>Reviews</li>
+        <li><i className="fa-solid fa-heart text-xl bg-gradient-to-bl from-dark-primary to-light-primary bg-clip-text text-transparent hover:cursor-pointer"></i></li>
       </ul>
+    </div>
     </div>
   )
 }

@@ -1,11 +1,45 @@
-import React from 'react'
-
 const Footer = () => {
   return (
-    <div className='bg-gray-200 w-screen h-90 '>
-      
-    </div>
-  )
-}
+    <footer className="bg-gray-50 text-gray-700 w-full px-6 py-12 shadow-inner">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        
+        {/* Logo and Tagline */}
+        <div>
+          <h2 className="text-2xl font-bold text-dark-primary mb-3">Recipe Finder</h2>
+          <p className="text-sm text-gray-600 leading-relaxed">
+            Find delicious recipes that match your mood. Simple, fast, and flavorful!
+          </p>
+        </div>
 
-export default Footer
+        {/* Navigation Links */}
+        <div>
+          <h3 className="text-lg font-semibold text-dark-primary mb-4">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li className="hover:text-dark-primary cursor-pointer transition-colors">Home</li>
+            <li className="hover:text-dark-primary cursor-pointer transition-colors">About</li>
+            <li className="hover:text-dark-primary cursor-pointer transition-colors">Contact</li>
+            <li className="hover:text-dark-primary cursor-pointer transition-colors">Reviews</li>
+          </ul>
+        </div>
+
+        {/* Social Icons */}
+        <div>
+          <h3 className="text-lg font-semibold text-dark-primary mb-4">Connect with Us</h3>
+          <div className="flex gap-5 text-xl text-gray-500">
+            <i className="fab fa-facebook-f hover:text-dark-primary cursor-pointer transition-colors"></i>
+            <i className="fab fa-instagram hover:text-pink-500 cursor-pointer transition-colors"></i>
+            <i className="fab fa-twitter hover:text-sky-500 cursor-pointer transition-colors"></i>
+            <i className="fab fa-youtube hover:text-red-500 cursor-pointer transition-colors"></i>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Line */}
+      <div className="border-t border-gray-200 mt-10 pt-6 text-center text-xs text-gray-500">
+        &copy; {new Date().getFullYear()} Recipe Finder. Practice Project – All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
