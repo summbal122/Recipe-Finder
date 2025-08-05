@@ -9,7 +9,6 @@ const useFetchCuisine = (name) => {
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${name}`);
         const json = await response.json();
         dispatch(addCuisineList(json.meals));
-        console.log("Fetched cuisines:", json.meals);
       };
       fetchCuisine();
     }, [name, dispatch]);

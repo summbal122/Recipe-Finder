@@ -17,7 +17,6 @@ const Header = () => {
   }
   const handleSearchQuery = ()=> {
     dispatch(handleSetQuery(query));
-    console.log(query);
   }
   return (
     <div className='w-full flex justify-center '>
@@ -27,8 +26,8 @@ const Header = () => {
         </div>
           {showItems && ( 
             <ul className='absolute z-20 left-0 top-0 bg-white py-6 px-10 space-y-2 h-screen overflow-y-scroll shadow-lg'>
-               <div className='flex justify-between items-center'>
-              <span className='text-dark-primary'>Cuisines</span>
+               <div className='flex justify-between items-center mb-5'>
+              <span className='text-dark-primary text-sm'>Cuisines</span>
                 <i onClick={toggleCuisines}  className="fa-solid fa-xmark text-xl -mr-4 hover:cursor-pointer"></i>
               </div>
               
@@ -43,7 +42,7 @@ const Header = () => {
         ))}
         </ul> )}
 
-    <div className='absolute top-2 w-9/12 grid grid-cols-12 gap-10 px-20 py-2 rounded-lg shadow-md bg-white'>
+    <div className='absolute top-2 w-9/12 grid grid-cols-12 gap-10 px-20 py-2 rounded-lg shadow-md bg-white '>
       <div className='col-span-2 flex items-center justify-between'>
         <Link to="/"><img className='w-12 rounded-full' alt="logo" src="https://png.pngtree.com/template/20191015/ourmid/pngtree-chef-abstract-kitchener-cooky-icon-logo-image_317353.jpg"/></Link>
       </div>

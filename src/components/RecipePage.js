@@ -1,17 +1,32 @@
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import useFetchRecipe from "../utils/useFetchRecipe";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import RecipesShimmer from "./RecipeShimmer";
 
 const RecipePage = () => {
   const recipe = useSelector((store) => store.recipe.recipe);
   const { name } = useParams();
   useFetchRecipe(name);
+   const [showMessage, setShowMessage] = useState(false);
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setShowMessage(true);
+      }, 500); 
+      const hideTimeout = setTimeout(() => {
+        setShowMessage(false);
+      }, 4000); 
+      return () => {
+        clearTimeout(timeout);
+        clearTimeout(hideTimeout);
+      };
+    }, []);
+
 
   if (!recipe)
     return (
-      <p className="text-center text-gray-500 text-lg mt-10">
-        Loading recipe...
-      </p>
+     <RecipesShimmer />
     );
 
   const ingredients = [];
@@ -29,10 +44,29 @@ const RecipePage = () => {
 
   return (
     <div className="bg-white min-h-screen px-6 py-8 mt-20">
+
+       <AnimatePresence>
+        {showMessage && (
+          <motion.div
+            initial={{ y: -60, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -60, opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute right-2 top-4/12 bg-dark-primary px-6 py-3 rounded-xl shadow-md text-lg font-medium flex items-center gap-2"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3720/3720823.png"
+              alt="chef"
+              className="w-6 h-6"
+            />
+            <span className="text-sm text-white">Hi, Good luck with your recipe!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
      
       <div className="flex gap-8">
         <img src={recipe.strMealThumb} alt={recipe.strMeal}
-          className="w-5/12 rounded-2xl shadow-xl" />
+          className="w-5/12 h-120 rounded-2xl shadow-xl" />
         <div>
           <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
             {recipe.strMeal}
