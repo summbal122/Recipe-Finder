@@ -13,15 +13,12 @@ const CuisinesPage = () => {
     { cuisines.length > 0 ? (
   <div className="mt-20 grid grid-cols-5">
     {cuisines.map((c) => (
-      <Link key={c.idMeal} to={`/recipe/${c.strMeal}`}>
-        <CuisineCard cuisine={c} />
-      </Link>
+        <CuisineCard key={c.idMeal} cuisine={c} />
     ))}
   </div>
 ) : (
   <CardShimmer count={20} />
 )}
-
     </div>
   </div>
   )};

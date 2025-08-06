@@ -27,9 +27,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-dark-primary mb-4">Connect with Us</h3>
           <div className="flex gap-5 text-xl text-gray-500">
             <i className="fab fa-facebook-f hover:text-dark-primary cursor-pointer transition-colors"></i>
-            <i className="fab fa-instagram hover:text-pink-500 cursor-pointer transition-colors"></i>
-            <i className="fab fa-twitter hover:text-sky-500 cursor-pointer transition-colors"></i>
-            <i className="fab fa-youtube hover:text-red-500 cursor-pointer transition-colors"></i>
+            <i className="fab fa-instagram"></i>
+            <i className="fab fa-twitter"></i>
+            <i className="fab fa-youtube "></i>
           </div>
         </div>
       </div>

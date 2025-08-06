@@ -52,8 +52,7 @@ const RecipePage = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -60, opacity: 0 }}
             transition={{ duration: 1 }}
-            className="absolute right-2 top-4/12 bg-dark-primary px-6 py-3 rounded-xl shadow-md text-lg font-medium flex items-center gap-2"
-          >
+            className="absolute right-2 top-4/12 bg-dark-primary px-6 py-3 rounded-xl shadow-md text-lg font-medium flex items-center gap-2"  >
             <img
               src="https://cdn-icons-png.flaticon.com/512/3720/3720823.png"
               alt="chef"
@@ -80,17 +79,18 @@ const RecipePage = () => {
 
           {/* Ingredients */}
          <div>
-        <h2 className="text-2xl font-semibold  text-gray-800 mt-4">Ingredients</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+        <h2 className="text-2xl font-semibold  text-gray-800 mt-3">Ingredients</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
           {ingredients.map((item, index) => (
-            <div key={index}
+         <div key={index}
               className="bg-light-primary/10 p-1 rounded-xl shadow hover:shadow-md transition text-center mt-2">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-8 mx-auto mb-2 object-contain" />
-              <p className="text-xs font-medium text-gray-800">{item.name}</p>
-              <p className="text-xs text-gray-500">{item.measure}</p>
+             {item.image ? (
+      <img
+        src={item.image} alt={item.name}
+        className="w-6 mx-auto mb-1 object-contain"/>
+    ) : null}
+        <p className="text-xs font-medium text-gray-800">{item.name}</p>
+        <p className="text-xs text-gray-500">{item.measure}</p>
             </div>
           ))}
         </div>
@@ -101,7 +101,7 @@ const RecipePage = () => {
 
       {/* YouTube Video */}
       <div className="my-10 flex gap-8">
-             {/* Instructions */}
+  
       <div>
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">Instructions</h2>
         <p className="text-gray-800 leading-relaxed whitespace-pre-line bg-white p-6 rounded-xl shadow-md">
@@ -109,7 +109,7 @@ const RecipePage = () => {
         </p>
       </div>
         <iframe
-          className="w-4/12 aspect-video rounded-xl shadow-lg"
+          className="w-4/12 h-90 aspect-video rounded-xl shadow-lg"
           src={recipe.strYoutube?.replace("watch?v=", "embed/")}
           title={recipe.strMeal}
           frameBorder="0"

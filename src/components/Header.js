@@ -5,9 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addCuisine } from '../utils/cuisineSlice'
 import { useState } from 'react'
 import { handleSetQuery } from '../utils/handleStateSlice'
+import { clearFavRecipes, removeFavRecipe, setShowFavRecipes } from '../utils/favRecipeSlice'
 const Header = () => {
   const dispatch = useDispatch();
    const showItems = useSelector((store) => store.handleState.showItems);
+   const favRecipes = useSelector((store) => store.favRecipe.favRecipes);
+   const showFavRecipes = useSelector((store) => store.favRecipe.showFavRecipes);
+   console.log(favRecipes);
    const [query, setQuery] = useState("")
     const toggleCuisines = () => {
     dispatch(handleShowItems(!showItems));
@@ -26,8 +30,7 @@ const Header = () => {
         </div>
           {showItems && ( 
             <ul className='absolute z-20 left-0 top-0 bg-white py-6 px-10 space-y-2 h-screen overflow-y-scroll shadow-lg'>
-               <div className='flex justify-between items-center mb-5'>
-              <span className='text-dark-primary text-sm'>Cuisines</span>
+               <div className='my-3 text-end'>
                 <i onClick={toggleCuisines}  className="fa-solid fa-xmark text-xl -mr-4 hover:cursor-pointer"></i>
               </div>
               
@@ -61,8 +64,45 @@ const Header = () => {
         <li className='hover:cursor-pointer hover:text-dark-primary'>About</li>
         <li className='hover:cursor-pointer hover:text-dark-primary'>Contact</li>
         <li className='hover:cursor-pointer hover:text-dark-primary'>Reviews</li>
-        <li><i className="fa-solid fa-heart text-xl bg-gradient-to-bl from-dark-primary to-light-primary bg-clip-text text-transparent hover:cursor-pointer"></i></li>
+        <li><i onClick={()=> (
+         dispatch(setShowFavRecipes(!showFavRecipes))
+        )} className="fa-solid fa-heart text-xl bg-gradient-to-bl from-dark-primary to-light-primary bg-clip-text text-transparent hover:cursor-pointer relative"></i></li>
       </ul>
+      {showFavRecipes && ( 
+      <div className='bg-white h-96 z-50 text-black w-4/12 absolute right-0 top-17 rounded-2xl shadow-xl flex flex-col p-4'>
+      {favRecipes.length > 0 ? (
+           <div className='h-80 w-full overflow-y-scroll space-y-2 '>
+      {
+      favRecipes.map((recipe) => (
+        
+           <div key = {recipe.idMeal} className='flex gap-2 items-center  justify-between border-b border-gray-200 p-2'>
+            <Link to={`/recipe/${recipe.strMeal}`}> 
+            <div className='flex items-center w-full gap-2' >
+           <img className='w-12 rounded-sm' src={recipe.strMealThumb}/>
+          <h1>{recipe.strMeal}</h1>
+           </div>
+              </Link>
+          <i onClick={()=> (
+            dispatch(removeFavRecipe(recipe.idMeal) )
+            )} className="ml-2 mr-4 fa-solid fa-trash text-dark-primary hover:cursor-pointer"></i>
+         
+       </div>
+    
+        
+      ) )}
+      </div>
+      ) : (
+      <p className= "text-gray-400 text-sm my-auto tracking-wide mx-auto font-thin ">No favourites added</p>
+      )}
+      {favRecipes.length > 0 && (
+          <button onClick={()=> (
+        dispatch(clearFavRecipes()) )} 
+        className='bg-dark-primary text-white px-10 py-1 rounded-2xl mt-4 hover:cursor-pointer hover:opacity-90'>
+        Clear
+     </button>
+       )}
+      </div>
+      )}
     </div>
     </div>
   )
