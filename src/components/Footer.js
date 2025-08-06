@@ -15,10 +15,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-dark-primary mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm text-gray-600">
-            <li className="hover:text-dark-primary cursor-pointer transition-colors">Home</li>
-            <li className="hover:text-dark-primary cursor-pointer transition-colors">About</li>
-            <li className="hover:text-dark-primary cursor-pointer transition-colors">Contact</li>
-            <li className="hover:text-dark-primary cursor-pointer transition-colors">Reviews</li>
+            <li className="hover:text-dark-primary hover:cursor-pointer">Home</li>
+            <li className="hover:text-dark-primary hover:cursor-pointer">About</li>
+            <li className="hover:text-dark-primary hover:cursor-pointer">Contact</li>
+            <li className="hover:text-dark-primary hover:cursor-pointer">Reviews</li>
           </ul>
         </div>
 
@@ -26,10 +26,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-dark-primary mb-4">Connect with Us</h3>
           <div className="flex gap-5 text-xl text-gray-500">
-            <i className="fab fa-facebook-f hover:text-dark-primary cursor-pointer transition-colors"></i>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-youtube "></i>
+            <i className="fab fa-facebook-f hover:text-dark-primary hover:cursor-pointer "></i>
+            <i className="fab fa-instagram hover:text-dark-primary hover:cursor-pointer "></i>
+            <i className="fab fa-twitter hover:text-dark-primary hover:cursor-pointer "></i>
+            <i className="fab fa-youtube hover:text-dark-primary hover:cursor-pointer  "></i>
           </div>
         </div>
       </div>

@@ -7,7 +7,6 @@ const CuisineCard = ({ cuisine }) => {
   const favRecipes = useSelector((store) => store.favRecipe.favRecipes);
   const isFav = favRecipes.some((r) => r.idMeal === cuisine.idMeal);
   const handleFavRecipe = (cuisine) => {
-   console.log(cuisine);
    dispatch(addFavRecipe(cuisine))
    dispatch(setFavAdded(true))
   }
@@ -18,7 +17,7 @@ const CuisineCard = ({ cuisine }) => {
           className="relative rounded-t-2xl w-full h-44 object-cover"
           src={cuisine.strMealThumb}
           alt={cuisine.strMeal} />
-          <i onClick={(()=> handleFavRecipe(cuisine))} className={`absolute  top-2 right-2 fa-solid fa-heart text-shadow-lg ${ isFav ? "text-red-700" : "text-gray-50" } text-2xl hover:bg-gradient-to-bl hover:from-dark-primary hover:to-light-primary hover:bg-clip-text hover:text-transparent hover:cursor-pointer`}></i>
+          <i onClick={(()=> handleFavRecipe(cuisine))} className={`absolute  top-2 right-2 fa-solid fa-heart text-shadow-lg ${ isFav ? "text-red-700" : "text-gray-50" } text-2xl hover:bg-red-700 hover:bg-clip-text hover:text-transparent hover:cursor-pointer`}></i>
         <div className="p-3 text-center flex justify-center">
           <p className="text-md font-thick tracking-wide leading-4.5 text-gray-800">{cuisine.strMeal}</p>
           <div className="absolute bottom-5 mt-3 w-full space-x-3">

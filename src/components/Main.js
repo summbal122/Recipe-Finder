@@ -1,48 +1,41 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion} from "framer-motion";
 import { Link } from "react-router";
-
 const Main = () => {
-   const [showImage, setShowImage] = useState(true);
-   useEffect(() => {
-    const interval = setInterval(() => {
-      setShowImage(false);
-      setTimeout(() => setShowImage(true), 2000); 
-    }, 7000); 
-    return () => clearInterval(interval);
-  }, []);
+
 
   return (
-    <div className="bg-light-primary/40 flex flex-col justify-center items-center h-screen w-full overflow-hidden"> 
+    <div className="flex flex-col justify-center items-center h-screen w-full overflow-hidden"
+      style={{  
+        backgroundImage:`repeating-linear-gradient(
+         90deg,
+        #f5b3b1,
+        #f5b3b1 20px,
+        #f5b3b1 20px,
+        #e89b9a 50px
+        )`,
+      }}  >
+    <div className="flex mr-30 mt-10">
+    <img src="https://images.vexels.com/media/users/3/127400/isolated/svg/43ee1cafca2f947f0be0d94aeff0fc26.svg" alt="kawaii chef" className="w-sm mb-2 hover:scale-105" />
+    <div className="flex flex-col justify-center items-center gap-8">
+     <motion.h1
+        className="text-5xl font-semibold text-red-900 text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2 }}>
+        Discover Delicious Recipes<br />
+        with <span className="text-dark-primary italic">Recipe Finder</span>
+      </motion.h1>
 
-   <div className="absolute bottom-10 w-full flex justify-center items-center z-10">
-        <AnimatePresence>
-          {showImage && (
-            <motion.img
-              key="dish-image"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 1 }}
-              src="https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg"
-              alt="Featured Dish"
-              className="rounded-2xl w-72 h-48 object-cover shadow-md"
-            />
-          )}
-        </AnimatePresence>
-      </div>
       <Link to="/recipes">
-        <button className="px-6 py-3 rounded-2xl hover:cursor-pointer bg-white text-black flex items-center gap-1 hover:shadow-lg z-20">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/7065/7065552.png"
-            className="w-8"
-            alt="icon"
-          />
-          <span className="font-light">Recipes</span>
+        <button className="px-8 py-3 rounded-full bg-white hover:scale-105 hover:cursor-pointer text-dark-primary flex gap-2 items-center shadow-lg transition duration-300 ease-in-out">
+          <img src="https://cdn-icons-png.flaticon.com/512/7065/7065552.png" className="w-5" />
+          Explore Recipes
         </button>
       </Link>
     </div>
-  );
-};
+    </div>
+    </div>
+   );
+  };
 
 export default Main;

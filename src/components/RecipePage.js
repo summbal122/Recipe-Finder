@@ -8,7 +8,6 @@ import RecipesShimmer from "./RecipeShimmer";
 const RecipePage = () => {
   const recipe = useSelector((store) => store.recipe.recipe);
   const { name } = useParams();
-  console.log({name});
   useFetchRecipe(name);
    const [showMessage, setShowMessage] = useState(false);
     useEffect(() => {
@@ -44,7 +43,7 @@ const RecipePage = () => {
   }
 
   return (
-    <div className="bg-white min-h-screen px-6 py-8 mt-20">
+    <div className="bg-gray-50 min-h-screen px-6 py-8 ">
 
        <AnimatePresence>
         {showMessage && (
@@ -64,7 +63,7 @@ const RecipePage = () => {
         )}
       </AnimatePresence>
      
-      <div className="flex gap-8">
+      <div className="flex gap-8 mt-20">
         <img src={recipe.strMealThumb} alt={recipe.strMeal}
           className="w-5/12 h-120 rounded-2xl shadow-xl" />
         <div>
