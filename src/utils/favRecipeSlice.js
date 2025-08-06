@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+const getInitialFavRecipes = () => {
+  const stored = localStorage.getItem("favRecipes");
+  return stored ? JSON.parse(stored) : [];
+};
 
 const favRecipeSlice = createSlice({
   name:"favRecipes",
   initialState:{
-    favRecipes: [],
+    favRecipes: getInitialFavRecipes(),
     favAdded : false,
     showFavRecipes:false,
   },

@@ -4,8 +4,6 @@ import { Link } from "react-router";
 
 const Main = () => {
    const [showImage, setShowImage] = useState(true);
- 
-
    useEffect(() => {
     const interval = setInterval(() => {
       setShowImage(false);

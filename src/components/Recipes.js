@@ -12,9 +12,9 @@ const Recipes = () => {
   useFetchByLetter();
   useFetchCategory();
   const dispatch = useDispatch();
+  const [randomMeal, setRandomMeal] = useState(null);
   const categories = useSelector((store) => store.category.categories)
   const categoryMeals = useSelector((store) => store.category.category)
-  const letterMeals = useSelector((store) => store.category.letterRecipes)
   const [clicked, setClicked] = useState(false);
   
  const handleCategory = (categoryName)=> {
@@ -29,15 +29,18 @@ useEffect(()=> {
   const fetchSingleRecipe = async () => {
     const res = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
     const data = await res.json();
-    const meal = data.meals;
+    const meal = data.meals[0];
     console.log(meal);
+    setRandomMeal(meal)
   }
   fetchSingleRecipe();
 }, [])
 
+
   return (
    <div className="bg-gray-50 flex min-h-screen w-full px-4 pb-10">
     <div>
+      {/* Categories */}
     <div className="flex flex-wrap mt-24 mx-auto gap-2 w-9/12"> 
     {categories.length > 0 ? (categories.map((c)=> (
   <button 
@@ -48,20 +51,19 @@ useEffect(()=> {
   </button> ))
   ) : ( <ButtonsShimmer count = {14}/>)}
     </div>
+
     <div className='grid grid-cols-12 mt-10 gap-4'> 
    <div className='col-span-10 grid grid-cols-4'> 
-    <p className="col-span-4 text-center text-dark-primary/60 tracking-normal text-sm">Discover delicious recipes by category or by their starting letter.</p>
-    {categoryMeals?.length > 0 ? (
-      categoryMeals.map((meal) => (
-          <CuisineCard key={meal.idMeal} cuisine={meal} />
-      ))
-    ) : letterMeals?.length > 0 ? (
-      letterMeals.map((meal) => (
-          <CuisineCard key={meal.idMeal} cuisine={meal} />
-      ))
-    ) : clicked ? (
-      <p className="col-span-4 text-center text-gray-500">No meals found.</p>
-    ) : null}
+    <p className="col-span-4 text-center text-dark-primary/60 tracking-normal text-sm">
+    Discover delicious recipes by category or by their starting letter.
+    </p>
+    {clicked && categoryMeals?.length > 0 ? (
+  categoryMeals.map((meal) => (
+    <CuisineCard key={meal.idMeal} cuisine={meal} />
+  ))
+) : (
+  randomMeal && <CuisineCard cuisine={randomMeal} />
+)}
     </div>
     <div className='col-span-2 flex flex-wrap gap-1 h-100'> 
       {letters.map((l) => (

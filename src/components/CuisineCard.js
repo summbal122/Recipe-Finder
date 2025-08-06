@@ -1,9 +1,11 @@
 import { Link } from "react-router";
-import { useDispatch } from "react-redux";
-import { addFavRecipe } from "../utils/favRecipeSlice";
-import { setFavAdded } from "../utils/favRecipeSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavRecipe, setFavAdded } from "../utils/favRecipeSlice";
+
 const CuisineCard = ({ cuisine }) => {
   const dispatch = useDispatch();
+  const favRecipes = useSelector((store) => store.favRecipe.favRecipes);
+  const isFav = favRecipes.some((r) => r.idMeal === cuisine.idMeal);
   const handleFavRecipe = (cuisine) => {
    console.log(cuisine);
    dispatch(addFavRecipe(cuisine))
@@ -16,9 +18,9 @@ const CuisineCard = ({ cuisine }) => {
           className="relative rounded-t-2xl w-full h-44 object-cover"
           src={cuisine.strMealThumb}
           alt={cuisine.strMeal} />
-          <i onClick={(()=> handleFavRecipe(cuisine))} className="absolute  top-2 right-2 fa-solid fa-heart text-shadow-lg  text-gray-50 text-2xl hover:bg-gradient-to-bl hover:from-dark-primary hover:to-light-primary hover:bg-clip-text hover:text-transparent hover:cursor-pointer "></i>
+          <i onClick={(()=> handleFavRecipe(cuisine))} className={`absolute  top-2 right-2 fa-solid fa-heart text-shadow-lg ${ isFav ? "text-red-700" : "text-gray-50" } text-2xl hover:bg-gradient-to-bl hover:from-dark-primary hover:to-light-primary hover:bg-clip-text hover:text-transparent hover:cursor-pointer`}></i>
         <div className="p-3 text-center flex justify-center">
-          <p className="text-md font-thick tracking-wide leading-5 text-gray-800">{cuisine.strMeal}</p>
+          <p className="text-md font-thick tracking-wide leading-4.5 text-gray-800">{cuisine.strMeal}</p>
           <div className="absolute bottom-5 mt-3 w-full space-x-3">
             <Link to={`/recipe/${cuisine.strMeal}`}>
           <button className="px-5 py-2 rounded-full text-black text-sm font-medium bg-white transition-all duration-200 hover:cursor-pointer hover:bg-black hover:text-white">

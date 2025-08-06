@@ -6,6 +6,7 @@ import { addCuisine } from '../utils/cuisineSlice'
 import { useState } from 'react'
 import { handleSetQuery } from '../utils/handleStateSlice'
 import { clearFavRecipes, removeFavRecipe, setShowFavRecipes } from '../utils/favRecipeSlice'
+import { clearSetQuery } from '../utils/handleStateSlice'
 const Header = () => {
   const dispatch = useDispatch();
    const showItems = useSelector((store) => store.handleState.showItems);
@@ -53,8 +54,12 @@ const Header = () => {
         <input value={query}
          onChange={(e) => setQuery(e.target.value)} 
          className='w-full  px-4 outline-none' placeholder='Search For a Recipe' />
-         <Link to={`/recipe/${query}`}>
-        <button onClick={handleSearchQuery}
+         <Link to={`/recipes/${query}`}>
+        <button onClick={() => {
+          handleSearchQuery();
+          setQuery("");
+
+        }}
          className='p-2 hover:cursor-pointer h-full'>
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -74,21 +79,17 @@ const Header = () => {
            <div className='h-80 w-full overflow-y-scroll space-y-2 '>
       {
       favRecipes.map((recipe) => (
-        
            <div key = {recipe.idMeal} className='flex gap-2 items-center  justify-between border-b border-gray-200 p-2'>
             <Link to={`/recipe/${recipe.strMeal}`}> 
             <div className='flex items-center w-full gap-2' >
            <img className='w-12 rounded-sm' src={recipe.strMealThumb}/>
-          <h1>{recipe.strMeal}</h1>
+          <h1 className='text-sm'>{recipe.strMeal}</h1>
            </div>
               </Link>
           <i onClick={()=> (
             dispatch(removeFavRecipe(recipe.idMeal) )
             )} className="ml-2 mr-4 fa-solid fa-trash text-dark-primary hover:cursor-pointer"></i>
-         
        </div>
-    
-        
       ) )}
       </div>
       ) : (

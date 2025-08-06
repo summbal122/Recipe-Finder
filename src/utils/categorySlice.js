@@ -8,7 +8,6 @@ const categorySlice = createSlice({
     categoryName: "",
     category: [] ,
     searchLetter: "",
-
   },
   reducers: {
     addCategories: (state, action) => {
@@ -22,7 +21,7 @@ const categorySlice = createSlice({
     },
       addSearchLetter: (state, action) => {
       state.searchLetter = action.payload;
-    }
+    }, 
   }
 });
 

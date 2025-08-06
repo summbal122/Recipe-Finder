@@ -8,6 +8,7 @@ import RecipesShimmer from "./RecipeShimmer";
 const RecipePage = () => {
   const recipe = useSelector((store) => store.recipe.recipe);
   const { name } = useParams();
+  console.log({name});
   useFetchRecipe(name);
    const [showMessage, setShowMessage] = useState(false);
     useEffect(() => {
@@ -100,7 +101,7 @@ const RecipePage = () => {
       </div>
 
       {/* YouTube Video */}
-      <div className="my-10 flex gap-8">
+      <div className="my-10 flex justify-between gap-5">
   
       <div>
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">Instructions</h2>
@@ -108,7 +109,8 @@ const RecipePage = () => {
           {recipe.strInstructions}
         </p>
       </div>
-        <iframe
+      {recipe.strYoutube ? (
+         <iframe
           className="w-4/12 h-90 aspect-video rounded-xl shadow-lg"
           src={recipe.strYoutube?.replace("watch?v=", "embed/")}
           title={recipe.strMeal}
@@ -116,6 +118,11 @@ const RecipePage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
+      ) : (
+        <div className="w-4/12 h-90 text-dark-primary flex  items-center justify-center ">
+          <p >Video not available</p> </div>
+      ) }
+       
       </div>
     
     
