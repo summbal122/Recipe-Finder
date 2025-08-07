@@ -11,7 +11,7 @@ const CuisinesPage = () => {
     <div className="bg-gray-50">
     <div className="p-6 min-h-screen">
     { cuisines.length > 0 ? (
-  <div className="mt-20 grid grid-cols-5">
+  <div className="mt-20 grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-0">
     {cuisines.map((c) => (
         <CuisineCard key={c.idMeal} cuisine={c} />
     ))}

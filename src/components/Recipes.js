@@ -37,24 +37,24 @@ useEffect(()=> {
 
 
   return (
-   <div className="bg-gray-50 flex min-h-screen w-full px-4 pb-10">
+   <div className="bg-gray-50 flex min-h-screen w-full px-2 md:px-4 pb-10">
     <div>
       {/* Categories */}
-    <div className="flex flex-wrap mt-24 mx-auto gap-2 w-9/12"> 
+    <div className="flex flex-wrap mt-24 mx-auto gap-2 md:w-9/12"> 
     {categories.length > 0 ? (categories.map((c)=> (
   <button 
     data-testid = "category-button"
     key={c.idCategory}
     onClick={() => handleCategory(c.strCategory)}
-    className="bg-white font-semibold px-6 py-2 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" >
+    className="bg-white text-xs md:text-sm font-semibold px-6 py-2 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" >
     {c.strCategory}
   </button> ))
   ) : ( <ButtonsShimmer count = {14}/>)}
     </div>
 
     <div className='grid grid-cols-12 mt-10 gap-4'> 
-   <div className='col-span-10 grid grid-cols-4'> 
-    <p className="col-span-4 text-center text-dark-primary/60 tracking-normal text-sm">
+   <div className='col-span-10 grid grid-cols-2 md:grid-cols-4 space-x-2 space-y-3 md:space-x-0 md:space-y-0'> 
+    <p className="col-span-4 text-center text-dark-primary/60 tracking-normal text-xs md:text-sm">
     Discover delicious recipes by category or by their starting letter.
     </p>
     {clicked && categoryMeals?.length > 0 ? (
@@ -68,7 +68,7 @@ useEffect(()=> {
     <div className='col-span-2 flex flex-wrap gap-1 h-100'> 
       {letters.map((l) => (
         <button onClick={() => handleLetter(l.letter)}
-         className="bg-white font-semibold py-2 w-14 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" 
+         className="bg-white text-xs md:text-md font-semibold py-2 w-14 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" 
          key={l.id}>{l.letter}
          </button>
       ) )}
