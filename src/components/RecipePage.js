@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import useFetchRecipe from "../utils/useFetchRecipe";
@@ -64,7 +65,7 @@ const RecipePage = () => {
       </AnimatePresence>
      
       <div className="flex gap-8 mt-20">
-        <img src={recipe.strMealThumb} alt={recipe.strMeal}
+        <img data-testid ="recipe-img" src={recipe.strMealThumb} alt={recipe.strMeal}
           className="w-5/12 h-120 rounded-2xl shadow-xl" />
         <div>
           <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
@@ -82,7 +83,7 @@ const RecipePage = () => {
         <h2 className="text-2xl font-semibold  text-gray-800 mt-3">Ingredients</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
           {ingredients.map((item, index) => (
-         <div key={index}
+         <div data-testid="ingredient" key={index}
               className="bg-light-primary/10 p-1 rounded-xl shadow hover:shadow-md transition text-center mt-2">
              {item.image ? (
       <img

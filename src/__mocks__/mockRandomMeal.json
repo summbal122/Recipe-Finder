@@ -1,0 +1,37 @@
+{
+  "meals": [
+    {
+      "idMeal": "52772",
+      "strMeal": "Teriyaki Chicken Casserole",
+      "strDrinkAlternate": null,
+      "strCategory": "Chicken",
+      "strArea": "Japanese",
+      "strInstructions": "Preheat oven to 350° F. Spray a 9x13-inch baking pan with non-stick spray. Combine soy sauce, water, brown sugar, ginger, and garlic in a saucepan over medium heat. Bring to a boil. In a small bowl, combine the cornstarch with cold water and whisk until dissolved. Add to the saucepan and cook until thickened. Place chicken breasts in the prepared pan. Pour one cup of the sauce over top. Bake for 30 minutes. Remove from oven and shred chicken. Add cooked rice and steamed vegetables. Pour remaining sauce and mix everything together. Return to oven and bake for 15 minutes. Let stand 5 minutes before serving.",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
+      "strTags": "Meat,Casserole",
+      "strYoutube": "https://www.youtube.com/watch?v=4aZr5hZXP_s",
+      "strIngredient1": "soy sauce",
+      "strIngredient2": "water",
+      "strIngredient3": "brown sugar",
+      "strIngredient4": "ground ginger",
+      "strIngredient5": "minced garlic",
+      "strIngredient6": "cornstarch",
+      "strIngredient7": "chicken breasts",
+      "strIngredient8": "rice",
+      "strIngredient9": "vegetables",
+      "strMeasure1": "3/4 cup",
+      "strMeasure2": "1/2 cup",
+      "strMeasure3": "1/4 cup",
+      "strMeasure4": "1/2 teaspoon",
+      "strMeasure5": "1/2 teaspoon",
+      "strMeasure6": "4 Tablespoons",
+      "strMeasure7": "2",
+      "strMeasure8": "2 cups cooked",
+      "strMeasure9": "1 (12 oz.) package",
+      "strSource": "http://life-in-the-lofthouse.com/teriyaki-chicken-casserole/",
+      "strImageSource": null,
+      "strCreativeCommonsConfirmed": null,
+      "dateModified": null
+    }
+  ]
+}

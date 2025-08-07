@@ -12,8 +12,9 @@ const CuisineCard = ({ cuisine }) => {
   }
   return (
     <div className="p-4">
-      <div className=" relative rounded-2xl h-80 bg-dark-primary/10 shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden">
+      <div data-testid ="cuisine-card" className=" relative rounded-2xl h-80 bg-dark-primary/10 shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden">
         <img
+         data-testid= "recipe-img"
           className="relative rounded-t-2xl w-full h-44 object-cover"
           src={cuisine.strMealThumb}
           alt={cuisine.strMeal} />
@@ -22,7 +23,7 @@ const CuisineCard = ({ cuisine }) => {
           <p className="text-md font-thick tracking-wide leading-4.5 text-gray-800">{cuisine.strMeal}</p>
           <div className="absolute bottom-5 mt-3 w-full space-x-3">
             <Link to={`/recipe/${cuisine.strMeal}`}>
-          <button className="px-5 py-2 rounded-full text-black text-sm font-medium bg-white transition-all duration-200 hover:cursor-pointer hover:bg-black hover:text-white">
+          <button  className="px-5 py-2 rounded-full text-black text-sm font-medium bg-white transition-all duration-200 hover:cursor-pointer hover:bg-black hover:text-white">
             See Recipe
           </button>
           </Link>

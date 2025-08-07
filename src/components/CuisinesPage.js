@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import CuisineCard from "./CuisineCard";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 import useFetchCuisine from "../utils/useFetchCuisine";
 import CardShimmer from "./CardShimmer";
 const CuisinesPage = () => {

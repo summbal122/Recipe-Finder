@@ -1,0 +1,44 @@
+{
+  "meals": [
+    {
+      "idMeal": "1",
+      "strMeal": "Sweet and Sour Pork",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/1.jpg"
+    },
+    {
+      "idMeal": "2",
+      "strMeal": "Kung Pao Chicken",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/2.jpg"
+    },
+    {
+      "idMeal": "3",
+      "strMeal": "Spring Rolls",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/3.jpg"
+    },
+    {
+      "idMeal": "4",
+      "strMeal": "Mapo Tofu",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/4.jpg"
+    },
+    {
+      "idMeal": "5",
+      "strMeal": "Chow Mein",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/5.jpg"
+    },
+    {
+      "idMeal": "6",
+      "strMeal": "Peking Duck",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/6.jpg"
+    },
+    {
+      "idMeal": "7",
+      "strMeal": "Wonton Soup",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/7.jpg"
+    },
+    {
+      "idMeal": "8",
+      "strMeal": "Fried Rice",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/8.jpg"
+    }
+  ]
+}

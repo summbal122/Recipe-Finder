@@ -1,0 +1,34 @@
+{
+  "meals": [
+    {
+      "idMeal": "1",
+      "strMeal": "Chicken Curry",
+      "strMealThumb": "https://some.url/image1.jpg"
+    },
+    {
+      "idMeal": "2",
+      "strMeal": "Grilled Chicken",
+      "strMealThumb": "https://some.url/image2.jpg"
+    },
+    {
+      "idMeal": "3",
+      "strMeal": "Chicken Tikka",
+      "strMealThumb": "https://some.url/image3.jpg"
+    },
+    {
+      "idMeal": "4",
+      "strMeal": "Chicken Soup",
+      "strMealThumb": "https://some.url/image4.jpg"
+    },
+    {
+      "idMeal": "5",
+      "strMeal": "Chicken Biryani",
+      "strMealThumb": "https://some.url/image5.jpg"
+    },
+    {
+      "idMeal": "6",
+      "strMeal": "Butter Chicken",
+      "strMealThumb": "https://some.url/image6.jpg"
+    }
+  ]
+}

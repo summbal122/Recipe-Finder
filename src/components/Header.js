@@ -25,17 +25,17 @@ const Header = () => {
   }
   return (
     <div className='w-full flex justify-center '>
-        <div onClick={toggleCuisines}  className='flex items-center absolute top-2 left-6 gap-2 hover:cursor-pointer bg-white rounded-lg shadow-md h-16 px-6'>
+        <div data-testid ="toogle-cuisines" onClick={toggleCuisines}  className='flex items-center absolute top-2 left-6 gap-2 hover:cursor-pointer bg-white rounded-lg shadow-md h-16 px-6'>
         <i className="fa-solid fa-bars"></i>
         <h1  className='text-sm font-thin tracking-widest'>Cuisines</h1>
         </div>
           {showItems && ( 
             <ul className='absolute z-20 left-0 top-0 bg-white py-6 px-10 space-y-2 h-screen overflow-y-scroll shadow-lg'>
                <div className='my-3 text-end'>
-                <i onClick={toggleCuisines}  className="fa-solid fa-xmark text-xl -mr-4 hover:cursor-pointer"></i>
+                <i  onClick={toggleCuisines}  className="fa-solid fa-xmark text-xl -mr-4 hover:cursor-pointer"></i>
               </div>
             {cuisines.map((c) => (
-          <li onClick={()=> {
+          <li data-testid ="cuisine" onClick={()=> {
             handleCuisine(c.name);
             toggleCuisines();
           }} className='hover:cursor-pointer hover:text-dark-primary' key={c.id}> 
@@ -49,7 +49,7 @@ const Header = () => {
       <div className='col-span-2 flex items-center justify-between'>
         <Link to="/"><img className='w-12 rounded-full' alt="logo" src="https://png.pngtree.com/template/20191015/ourmid/pngtree-chef-abstract-kitchener-cooky-icon-logo-image_317353.jpg"/></Link>
       </div>
-      <form onSubmit={() => {
+      <form data-testid ="input-form"  onSubmit={() => {
           handleSearchQuery();
           navigate(`/recipes/${query}`);
           setQuery("");
@@ -65,10 +65,11 @@ const Header = () => {
     
       </form>
       <ul className='flex col-span-3 items-center gap-8 font-thick text-sm '>
-        <li className='hover:cursor-pointer hover:text-dark-primary'>About</li>
-        <li className='hover:cursor-pointer hover:text-dark-primary'>Contact</li>
-        <li className='hover:cursor-pointer hover:text-dark-primary'>Reviews</li>
-        <li><i onClick={()=> (
+        <li data-testid ="nav" className='hover:cursor-pointer hover:text-dark-primary'>About</li>
+        <li data-testid ="nav" className='hover:cursor-pointer hover:text-dark-primary'>Contact</li>
+        <li data-testid ="nav" className='hover:cursor-pointer hover:text-dark-primary'>Reviews</li>
+        <li>
+        <i data-testid="fav-recipes" onClick={()=> (
          dispatch(setShowFavRecipes(!showFavRecipes))
         )} className="fa-solid fa-heart text-xl bg-gradient-to-bl from-dark-primary to-light-primary bg-clip-text text-transparent hover:cursor-pointer relative"></i></li>
       </ul>

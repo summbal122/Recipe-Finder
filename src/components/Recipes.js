@@ -43,6 +43,7 @@ useEffect(()=> {
     <div className="flex flex-wrap mt-24 mx-auto gap-2 w-9/12"> 
     {categories.length > 0 ? (categories.map((c)=> (
   <button 
+    data-testid = "category-button"
     key={c.idCategory}
     onClick={() => handleCategory(c.strCategory)}
     className="bg-white font-semibold px-6 py-2 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" >

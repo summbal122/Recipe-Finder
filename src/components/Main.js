@@ -1,8 +1,6 @@
 import { motion} from "framer-motion";
 import { Link } from "react-router";
 const Main = () => {
-
-
   return (
     <div className="flex flex-col justify-center items-center h-screen w-full overflow-hidden"
       style={{  
@@ -27,7 +25,7 @@ const Main = () => {
       </motion.h1>
 
       <Link to="/recipes">
-        <button className="px-8 py-3 rounded-full bg-white hover:scale-105 hover:cursor-pointer text-dark-primary flex gap-2 items-center shadow-lg transition duration-300 ease-in-out">
+        <button data-testid="explore-recipes" className="px-8 py-3 rounded-full bg-white hover:scale-105 hover:cursor-pointer text-dark-primary flex gap-2 items-center shadow-lg transition duration-300 ease-in-out">
           <img src="https://cdn-icons-png.flaticon.com/512/7065/7065552.png" className="w-5" />
           Explore Recipes
         </button>
