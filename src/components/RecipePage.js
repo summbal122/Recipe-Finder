@@ -44,7 +44,7 @@ const RecipePage = () => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen px-2 md:px-6 py-8 ">
+    <div className="bg-gray-50 min-h-screen px-2 lg:px-6 py-8 ">
        <AnimatePresence>
         {showMessage && (
           <motion.div
@@ -63,9 +63,9 @@ const RecipePage = () => {
         )}
       </AnimatePresence>
      
-      <div className="flex flex-col md:flex-row gap-3 md:gap-8 mt-20">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-3 lg:gap-8 mt-20">
         <img data-testid ="recipe-img" src={recipe.strMealThumb} alt={recipe.strMeal}
-          className=" h-40 w-5/12 md:h-120 rounded-2xl shadow-xl" />
+          className=" h-40 w-5/12 md:h-80 lg:h-120 rounded-2xl shadow-xl" />
         <div>
           <h1 className="text-lg md:text-4xl font-extrabold text-gray-900 mb-2">
             {recipe.strMeal}
@@ -79,18 +79,18 @@ const RecipePage = () => {
 
           {/* Ingredients */}
          <div>
-        <h2 className="text-lg md:text-2xl font-semibold  text-gray-800 mt-3">Ingredients</h2>
+        <h2 className="text-lg md:text-2xl font-semibold  text-gray-800 mt-3 md:mt-0">Ingredients</h2>
         <div className="grid grid-cols-4 lg:grid-cols-6 gap-2">
           {ingredients.map((item, index) => (
-         <div data-testid="recipe-ingredient" key={index}
-              className="bg-light-primary/10 p-1 rounded-xl shadow hover:shadow-md transition text-center mt-2">
+         <div data-testid="ingredient" key={index}
+              className="bg-light-primary/10 p-1 rounded-xl shadow hover:shadow-md transition text-center mt-2 flex flex-col items-center justify-center">
              {item.image ? (
       <img
         src={item.image} alt={item.name}
         className="w-6 mx-auto mb-1 object-contain"/>
     ) : null}
-        <p className="text-xs font-medium text-gray-800">{item.name}</p>
-        <p className="text-xs text-gray-500">{item.measure}</p>
+        <p className="text-[10px] lg:text-xs font-medium text-gray-800">{item.name}</p>
+        <p className=" text-[9px] lg:text-xs text-gray-500">{item.measure}</p>
             </div>
           ))}
         </div>
@@ -100,7 +100,7 @@ const RecipePage = () => {
       </div>
 
       {/* YouTube Video */}
-      <div className=" my-3 md:my-10 flex flex-col md:flex-row justify-between gap-5">
+      <div className=" my-3 md:my-10 flex flex-col lg:flex-row justify-between gap-5">
       <div>
         <h2 className="text-lg md:text-2xl font-semibold mb-1 md:mb-4 text-gray-800">Instructions</h2>
         <p className="text-gray-800 text-xs md:text-sm leading-relaxed whitespace-pre-line bg-white p-3 md:p-6 rounded-xl shadow-md">
@@ -109,7 +109,7 @@ const RecipePage = () => {
       </div>
       {recipe.strYoutube ? (
          <iframe
-          className="md:w-4/12 h-70 md:h-90 aspect-video rounded-xl shadow-lg"
+          className="lg:w-4/12 h-70 md:h-90 aspect-video rounded-xl shadow-lg"
           src={recipe.strYoutube?.replace("watch?v=", "embed/")}
           title={recipe.strMeal}
           frameBorder="0"

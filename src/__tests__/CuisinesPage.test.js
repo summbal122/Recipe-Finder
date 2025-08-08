@@ -31,8 +31,8 @@ describe ("Cuisines Page", () => {
 })
 
   it ("should render 8 cuisines cards in the cuisines page", () => {
-   const toogle = screen.getByTestId("toogle-cuisines");
-    fireEvent.click(toogle);
+   const toogle = screen.getAllByTestId("toogle-cuisines");
+    fireEvent.click(toogle[0]);
      const chineseCuisine = screen.getByText("Chinese");
     fireEvent.click(chineseCuisine);
     const cuisineCard = screen.getAllByTestId("cuisine-card");

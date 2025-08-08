@@ -16,7 +16,7 @@ This project also includes **unit and integration testing** to ensure everything
 - **Smooth Navigation** – Built with React Router for quick page switching.
 - **State Management** – Managed with Redux Toolkit.
 - **Animations** – Added with Motion for a smooth user experience.
-- **Firebase Ready** – Setup for potential backend integrations.
+- **Firebase Deploy** – Hosted online using Firebase Hosting.
 - **Tested** – Includes unit and integration tests using Jest & React Testing Library.
 
 ---
@@ -52,15 +52,6 @@ This project also includes **unit and integration testing** to ensure everything
    cd Recipe-Finder
 
 
-## 📦 Installation & Setup
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/summbal122/Recipe-Finder.git
-   cd Recipe-Finder
-   ```
-
 2. **Install dependencies**
 
    ```bash
@@ -87,11 +78,26 @@ This project also includes **unit and integration testing** to ensure everything
 
 ---
 
-## 📸 Screenshots
-
-*Add screenshots of your app here after uploading them to the repo or using image links.*
+## Screenshots
 
 Home Page                            
-![Home](![alt text](image.png)) 
+![alt text](image-1.png)
+![alt text](image-3.png)
+
+Recipes                          
+![alt text](image-4.png)
+![alt text](image-5.png)
+
+Recipes Page
+![alt text](image-10.png)
+
+Cuisines Page                            
+![alt text](image-7.png)
+
+Searched Recipes                 
+![alt text](image-8.png)
+
+Footer                            
+![alt text](image-9.png)
 
 ---

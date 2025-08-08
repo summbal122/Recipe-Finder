@@ -11,15 +11,15 @@ const SearchedRecipes = () => {
   const searchedMeals = useSelector((state) => state.search.searchedRecipes);
 
   return (
-    <div className="px-2 md:px-10 py-4 bg-gray-50">
-      <div className="mt-20">
-      <h1 className="text-xl mb-6 text-gray-700">Search results for: <span className="font-semibold text-dark-primary text-sm">
+    <div className="px-2 md:px-4 py-4 bg-gray-50">
+      <div className="mt-23">
+      <h1 className="text-sm md:text-xl mb-3 md:mb-6 text-gray-700">Search results for: <span className="font-semibold text-dark-primary text-sm">
         {query}</span></h1>
         {loading ? (
           <CardShimmer count={20} />) 
         : 
       (searchedMeals?.length > 0 ? (
-        <div className="grid grid-cols-2 gap-3 md:gap-0 md:grid-cols-5 ">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 ">
           {searchedMeals.map((meal) => (
             <CuisineCard key={meal.idMeal} cuisine={meal} />
           ))}

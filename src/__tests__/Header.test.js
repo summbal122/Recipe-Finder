@@ -15,26 +15,26 @@ describe ("Header Component", () => {
   ) 
   });
 
-  it("Should render 3 nav links in the header", ()=> {
+  it("Should render 6 nav links in the header", ()=> {
    const navLinks = screen.getAllByTestId("nav");
-  expect (navLinks.length).toBe(3)
+  expect (navLinks.length).toBe(6)
   })
 
    it("Should render 24 cuisines in the header", ()=> {
-  const toogle = screen.getByTestId("toogle-cuisines");
-  fireEvent.click(toogle);
+  const toogle = screen.getAllByTestId("toogle-cuisines");
+  fireEvent.click(toogle[0]);
    const navLinks = screen.getAllByTestId("cuisine");
   expect (navLinks.length).toBe(19)
   })
 
-  it("Should render  input form in the header", ()=> {
-  const form = screen.getByTestId("input-form");
-  expect(form).toBeInTheDocument;
+  it("Should render 2  input form in the header", ()=> {
+  const form = screen.getAllByTestId("input-form");
+  expect(form.length).toBe(2)
   })
 
   it("Should render fav recipes in the header", ()=> {
-  const favRecipes = screen.getByTestId("fav-recipes");
-  expect(favRecipes).toBeInTheDocument;
+  const favRecipes = screen.getAllByTestId("fav-recipes");
+  expect(favRecipes.length).toBe(2);
   })
 
 })

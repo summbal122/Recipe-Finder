@@ -1,6 +1,6 @@
 const CardShimmer = ({count = 8}) => {
   return (
-    <div className='grid grid-cols-5 gap-4 mt-20'>
+    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-20'>
     {[...Array(count)].map((_, i) => (
          <div className="relative rounded-2xl h-80 bg-gray-100"
          key={i}>

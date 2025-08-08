@@ -37,26 +37,37 @@ useEffect(()=> {
 
 
   return (
-   <div className="bg-gray-50 flex min-h-screen w-full px-2 md:px-4 pb-10">
+   <div className="bg-gray-50 flex md:min-h-screen w-full px-2 md:px-4 pb-8 md:pb-10">
     <div>
       {/* Categories */}
-    <div className="flex flex-wrap mt-24 mx-auto gap-2 md:w-9/12"> 
+    <div className="flex flex-wrap mt-28 md:mt-24 mx-auto gap-1.5 md:gap-2 lg:w-9/12"> 
     {categories.length > 0 ? (categories.map((c)=> (
   <button 
     data-testid = "category-button"
     key={c.idCategory}
     onClick={() => handleCategory(c.strCategory)}
-    className="bg-white text-xs md:text-sm font-semibold px-6 py-2 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" >
+    className="bg-white text-[10px] md:text-sm font-semibold px-4 md:px-6 py-2 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" >
     {c.strCategory}
   </button> ))
   ) : ( <ButtonsShimmer count = {14}/>)}
     </div>
+     <div className='block md:hidden'>
+    <div className='flex flex-wrap gap-1.5 my-3'> 
+      {letters.map((l) => (
+        <button onClick={() => handleLetter(l.letter)}
+         className="bg-white text-xs font-semibold py-2 w-10 shadow-md rounded-md " 
+         key={l.id}>{l.letter}
+         </button>
+      ) )}
+    </div>
+    </div>
 
-    <div className='grid grid-cols-12 mt-10 gap-4'> 
-   <div className='col-span-10 grid grid-cols-2 md:grid-cols-4 space-x-2 space-y-3 md:space-x-0 md:space-y-0'> 
-    <p className="col-span-4 text-center text-dark-primary/60 tracking-normal text-xs md:text-sm">
+    <div className='flex flex-col gap-4 mt-5 md:mt-10'> 
+    <p className=" md:text-sm text-center text-dark-primary/60 tracking-normal text-xs">
     Discover delicious recipes by category or by their starting letter.
     </p>
+    <div className='grid grid-cols-12  gap-2  lg:gap-4'>
+    <div className='grid col-span-12 md:col-span-9 lg:col-span-10 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-2 gap-y-4 md:gap-x-6 md:gap-y-5 '>
     {clicked && categoryMeals?.length > 0 ? (
   categoryMeals.map((meal) => (
     <CuisineCard key={meal.idMeal} cuisine={meal} />
@@ -64,14 +75,17 @@ useEffect(()=> {
 ) : (
   randomMeal && <CuisineCard cuisine={randomMeal} />
 )}
-    </div>
-    <div className='col-span-2 flex flex-wrap gap-1 h-100'> 
+</div>
+    <div className='hidden md:block col-span-3 lg:col-span-2 '>
+    <div className='flex flex-wrap gap-2 justify-center'> 
       {letters.map((l) => (
         <button onClick={() => handleLetter(l.letter)}
-         className="bg-white text-xs md:text-md font-semibold py-2 w-14 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" 
+         className="bg-white text-xs font-semibold py-3 w-14 shadow-md rounded-md hover:cursor-pointer hover:bg-black hover:text-white" 
          key={l.id}>{l.letter}
          </button>
       ) )}
+    </div>
+    </div>
     </div>
     </div>
    </div>
