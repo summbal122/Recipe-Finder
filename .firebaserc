@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "walmart-c9543"
-  }
+  },
+  "targets": {
+    "walmart-c9543": {
+      "hosting": {
+        "recipeFinderAlias": [
+          "recipefinder-web-app"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
