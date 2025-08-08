@@ -9,9 +9,9 @@ const CuisinesPage = () => {
   const cuisines = useSelector((store) => store.cuisine.cuisines);
   return (
     <div className="bg-gray-50">
-    <div className="p-3 md:p-5 mt-5 min-h-screen">
+    <div className="p-2  md:p-5  min-h-screen">
     { cuisines.length > 0 ? (
-  <div className="mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
+  <div className="mt-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
     {cuisines.map((c) => (
         <CuisineCard key={c.idMeal} cuisine={c} />
     ))}

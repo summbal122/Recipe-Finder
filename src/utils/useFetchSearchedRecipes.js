@@ -4,27 +4,35 @@ import { setSearchedRecipes } from "./searchSlice";
 
 const useFetchSearchedRecipes = (query) => {
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!query) return;
+    let ignore = false;
+
     const fetchRecipes = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
+        const response = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+        );
         const json = await response.json();
-        dispatch(setSearchedRecipes(json.meals || []));
+        if (!ignore) dispatch(setSearchedRecipes(json.meals || []));
       } catch (error) {
-        dispatch(setSearchedRecipes([]));
+        if (!ignore) dispatch(setSearchedRecipes([]));
       } finally {
-        setLoading(false); 
+        if (!ignore) setLoading(false);
       }
     };
 
     fetchRecipes();
+
+    return () => {
+      ignore = true; 
+    };
   }, [query, dispatch]);
 
-  return loading; 
+  return loading;
 };
 
 export default useFetchSearchedRecipes;

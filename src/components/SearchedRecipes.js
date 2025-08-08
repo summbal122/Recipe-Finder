@@ -7,7 +7,6 @@ import CardShimmer from "./CardShimmer";
 const SearchedRecipes = () => {
   const { name: query } = useParams();
   const loading = useFetchSearchedRecipes(query)
-  useFetchSearchedRecipes(query);
   const searchedMeals = useSelector((state) => state.search.searchedRecipes);
 
   return (
