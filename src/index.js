@@ -1,4 +1,3 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import store from "./utils/appStore";
@@ -9,4 +8,4 @@ const root = createRoot(path);
 root.render( 
 <Provider store={store}>
     <App />
-  </Provider>)
+</Provider>) 

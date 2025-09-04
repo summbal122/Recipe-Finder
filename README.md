@@ -81,23 +81,23 @@ This project also includes **unit and integration testing** to ensure everything
 ## Screenshots
 
 **Home Page**                           
-![alt text](image-1.png)
+![alt text](/screenshots/image-1.png)
 ![alt text](image-3.png)
 
 **Recipes**                         
-![alt text](image-4.png)
-![alt text](image-5.png)
+![alt text](/screenshots/image-4.png)
+![alt text](/screenshots/image-5.png)
 
 **Recipes Page**
-![alt text](image-10.png)
+![alt text](/screenshots/image-10.png)
 
 **Cuisines Page**                            
-![alt text](image-7.png)
+![alt text](/screenshots/image-7.png)
 
 **Searched Recipes**                 
-![alt text](image-8.png)
+![alt text](/screenshots/image-8.png)
 
 **Footer**                          
-![alt text](image-9.png)
+![alt text](/screenshots/image-9.png)
 
 ---

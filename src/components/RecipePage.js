@@ -17,6 +17,7 @@ const RecipePage = () => {
       }, 500); 
       const hideTimeout = setTimeout(() => {
         setShowMessage(false);
+
       }, 4000); 
       return () => {
         clearTimeout(timeout);
